@@ -36,12 +36,19 @@ This project analyzes the sales data of a coffee shop to uncover trends and insi
 
   ## Data Analysis Techniques:
 -XLOOKUP: Used to match customer data across different tables:
+
   =XLOOKUP(C2,customers!$A$1:$A$1001,customers!$B$1:$B$1001,,0)
+  
 -Conditional Lookup with XLOOKUP: Applied to retrieve specific customer details based on conditions:
+
   =IF(XLOOKUP(C2,customers!$A$1:$A$1001,customers!$C$1:$C$1001,,0)=0,"",XLOOKUP(C2,customers!$A$1:$A$1001,customers!$C$1:$C$1001,,0))
+  
 -INDEX-MATCH: Employed to extract product information from a list:
+
   =INDEX(products!$A$1:$G$49,MATCH(orders!$D3,products!$A$2:$A$49,0),MATCH(orders!K$1,products!$A$1:$G$1,0))
+  
 -Nested IF Statements: Used to categorize coffee types based on product codes:
+
   =IF(I2="Rob","Robusta",IF(I2="Exc","Excelsa",IF(I2="Ara","Arabica",IF(I2="Lib","Liberica",""))))
   
   
